@@ -10,7 +10,7 @@ import java.io.*;
 public class ImageServiceImpl implements ImageService {
     @Override
     public void saveImage(String imageName, HttpServletRequest request) throws IOException{
-        File file = new File("C://Users/zarip/Desktop/ImageSpring/" + imageName);
+        File file = new File("C:\\Users\\zarip\\OneDrive\\Desktop\\ImageSpring\\" + imageName);
         InputStream inputStream = request.getInputStream();
         BufferedImage image = ImageIO.read(inputStream);
         OutputStream outputStream = new FileOutputStream(file);
@@ -21,7 +21,7 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public byte[] loadImage(String imageName) throws IOException {
-        File file = new File("C://Users/zarip/Desktop/ImageSpring/" + imageName);
+        File file = new File("C:\\Users\\zarip\\OneDrive\\Desktop\\ImageSpring\\" + imageName);
         BufferedImage image = ImageIO.read(file);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(image, "png", baos);
